@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./index.xhtml">
+
+            <ui:define name="right">
+                <h:form>
+                    <h:outputLabel style="margin: 15px;">Gasto anual da lavadora:</h:outputLabel>
+                    <h:outputLabel style="margin: 15px;" value="#{consumoBean.total}(W)"/><br/><br/>
+                    <h:outputLabel style="margin: 15px;">Mês com maior consumo</h:outputLabel>
+                    <h:outputLabel style="margin: 15px;" value="#{consumoBean.maior}"/><br/><br/>
+                    <h:outputLabel style="margin: 15px;">Mês com menor consumo:</h:outputLabel>
+                    <h:outputLabel style="margin: 15px;" value="#{consumoBean.menor}"/><br/><br/>
+                    <h:outputLabel style="margin: 15px;" value="Aluna: Erica Camila Silva Cunha"/><br/><br/>
+                    <h:commandButton  style="float: right; padding: 5px; margin: 10px 0px;" 
+                                      value="Voltar" action="#{consumoBean.Voltar()}"></h:commandButton>
+                </h:form>
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

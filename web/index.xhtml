@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./Template.xhtml">
+
+            <ui:define name="content">
+                <h3>Informe o cosumo mensal(W):</h3>
+                <h:form style="width: 300px; text-align: right;">
+                    <h:outputLabel style="margin: 15px;">Janeiro:</h:outputLabel><h:inputText value="#{consumoBean.jan}"/><br/>
+                    <h:outputLabel style="margin: 15px;">Fevereiro:</h:outputLabel><h:inputText value="#{consumoBean.fev}"/><br/>
+                    <h:outputLabel style="margin: 15px;">Março</h:outputLabel><h:inputText value="#{consumoBean.mar}"/><br/>
+                    <h:outputLabel style="margin: 15px;">Abril:</h:outputLabel><h:inputText value="#{consumoBean.abr}"/><br/>
+                    <h:outputLabel style="margin: 15px;">Maio:</h:outputLabel><h:inputText value="#{consumoBean.mai}"/><br/>
+                    <h:outputLabel style="margin: 15px;">Junho:</h:outputLabel><h:inputText value="#{consumoBean.jun}"/><br/>
+                    <h:outputLabel style="margin: 15px;">Julho:</h:outputLabel><h:inputText value="#{consumoBean.jul}"/><br/>
+                    <h:outputLabel style="margin: 15px;">Agosto:</h:outputLabel><h:inputText value="#{consumoBean.ago}"/><br/>
+                    <h:outputLabel style="margin: 15px;">Setembro:</h:outputLabel><h:inputText value="#{consumoBean.set}"/><br/>
+                    <h:outputLabel style="margin: 15px;">Outubro:</h:outputLabel><h:inputText value="#{consumoBean.out}"/><br/>
+                    <h:outputLabel style="margin: 15px;">Novembro:</h:outputLabel><h:inputText value="#{consumoBean.nov}"/><br/>
+                    <h:outputLabel style="margin: 15px;">Dezembro:</h:outputLabel><h:inputText value="#{consumoBean.dez}"/><br/>
+
+                    <h:commandButton  style="float: right; padding: 5px; margin: 10px 0px;" 
+                                      value="Calcular" action="#{consumoBean.Calculate()}"></h:commandButton>
+                </h:form>
+
+            </ui:define>
+
+            <ui:define name="right">
+                <h:outputLabel style="margin: 15px;">Gasto anual da lavadora:<b>#{consumo.getTotal}</b></h:outputLabel><br/><br/>
+                <h:outputLabel style="margin: 15px;">Mês com maior consumo:<b>#{consumo.getMaiorConsumo}</b></h:outputLabel><br/><br/>
+                <h:outputLabel style="margin: 15px;">Mês com menor consumo:<b>#{consumo.getMenorConsumo}</b></h:outputLabel><br/><br/>
+            </ui:define>
+            
+            
+        </ui:composition>
+
+    </body>
+</html>
